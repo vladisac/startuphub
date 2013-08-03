@@ -3,6 +3,11 @@
 Meteor.subscribe("directory");
 Meteor.subscribe("parties");
 
+// Attending
+var attending = function (party) {
+  return (_.groupBy(party.rsvps, 'rsvp').yes || []).length;
+};
+
 // If no party selected, select one.
 Meteor.startup(function () {
   Meteor.autorun(function () {
