@@ -16,6 +16,11 @@
 */
 Parties = new Meteor.Collection("parties");
 
+// Attending
+var attending = function (party) {
+  return (_.groupBy(party.rsvps, 'rsvp').yes || []).length;
+};
+
 Parties.allow({
   insert: function (userId, party) {
     return false; // no cowboy inserts -- use createParty method
@@ -42,10 +47,6 @@ Parties.allow({
     });
   }
 });
-
-var attending = function (party) {
-  return (_.groupBy(party.rsvps, 'rsvp').yes || []).length;
-};
 
 Meteor.methods({
   // options should include: title, description, x, y, date, public
