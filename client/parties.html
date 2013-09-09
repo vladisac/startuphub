@@ -38,6 +38,9 @@
           <div class="span4">
               {{> calendar}}
           </div>
+		  <div class="span2">
+              {{> items}}
+          </div>
 
         </div>
       </div>
@@ -70,6 +73,7 @@
 <template name="items">
   <div id="Items" class='Clear'>
     <div id="ItemsTop" class='Clear'>
+	  <div id="ItemsTitle">Items for date</div>
       <div class="addItemButton" id="ItemsButton"></div>
       <div id="TitleDate">{{DayString}}</div>
       <div id="Preloader"></div>
@@ -168,10 +172,10 @@
         {{/if}}
       </h1>
     {{/if}}
-          
           <div class="span3">
             <div id="Items" class='Clear'>
               <div id="ItemsTop" class='Clear'>
+			    <div id="ItemsTitle">Items for party</div>
                 <div id="ItemsButton"></div>
                 <div id="TitleDate">{{DayString}}</div>
                 <div id="Preloader"></div>

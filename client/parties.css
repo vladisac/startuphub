@@ -98,8 +98,9 @@ body { background: #f4f8f9 }
     width: 20px;
     height: 20px;
     position: relative;
-    left: 325px;
+    float: right;
     top: 10px;
+	left: -25px;
     cursor: pointer;
     background: url("/Close.png");
 }
@@ -172,13 +173,15 @@ body { background: #f4f8f9 }
 #ItemsTop {
     background: url('/Todo_Top.png');
     background-repeat: no-repeat;
-    width: 579px;
+    width: 270px;
     height: 152px;
+	position: relative;
+	top: -20px;
 }
 #ItemsButton {
     position: relative;
-    top: 45px;
-    left: 59px;
+	top: 65px;
+	left: 220px;
     height: 30px;
     width: 30px;
     background: url('/Button.png');
@@ -192,7 +195,7 @@ body { background: #f4f8f9 }
     padding: 0;
     margin: 0;
     background: transparent;
-    width: 405px;
+    width: 105px;
     height: 30px;
     margin-top: -4px;
     margin-left: -1px;
@@ -205,28 +208,34 @@ body { background: #f4f8f9 }
 .ItemsRow {
     background: url('/Todo_White.png');
     background-repeat: no-repeat;
-    width: 579px;
+    width: 270px;
     height: 40px;
     position: relative;
+	top: -22px;
+	left: -1px;
+	cursor: pointer;
 }
 .ItemsRowAlt {
     background: url('/Todo_Grey.png');
-    width: 579px;
+    width: 270px;
     height: 40px;
     position: relative;
 }
 #ItemsBottom {
     background: url('/Todo_Bottom.png');
     background-repeat: no-repeat;
-    width: 579px;
+    width: 360px;
     height: 69px;
+	position: relative;
+	top: -22px;
+	left: -43px;
 }
 .Checked {
     width: 26px;
     height: 21px;
     position: absolute;
     top: 9.5px;
-    left: 57px;
+    left: 20px;
     background: url('/BoxCheck.png');
 }
 .Unchecked {
@@ -234,23 +243,36 @@ body { background: #f4f8f9 }
     height: 21px;
     position: absolute;
     top: 9.5px;
-    left: 57px;
+    left: 20px;
     background: url('/BoxUncheck.png');
 }
 .Item {
+    width: 0px;
     font-family: Calibri;
     font-size: 18px;
     color: #2F2F2F;
-    position: absolute;
+    position: relative;
     top: 9.5px;
-    left: 115px;
+    left: 75px;
 }
+
+#ItemsTitle {
+    position: absolute;
+    top: 68px;
+	left: 8px;
+    text-align: center;
+    width: 228px;
+    font-family: Calibri;
+    color: #fff;
+    font-size: 18px;
+}
+
 #TitleDate {
     position: absolute;
     color: #2F2F2F;
     font-family: Calibri;
-    top: 122px;
-    left: 108px;
+    top: 130px;
+    left: 47px;
     font-size: 22px;
 }
 .Done {
