@@ -47,19 +47,43 @@ Template.details.maybeChosen = function (what) {
   return what == myRsvp.rsvp ? "chosen btn-inverse" : "";
 };
 
-
 Template.details.itemsForParty = function(){
   var party = Parties.findOne(Session.get("selected"));
   if (! party)
     return []; // party hasn't loaded yet
   return party.items;
 }
+
+//////////////////////////////////////////// LXS EDIT
+Template.items.ItemsForDate = function(){
+  var d = new Date(Session.get("Date"));
+  var party = Parties.find({date:d});
+  if (! party)
+    return []; // party hasn't loaded yet
+  return party;
+}
+
+Template.items.Name = function(){
+  return this.title;
+}
+
+Template.items.Editing = function(){
+  return this.owner === Meteor.userId();
+}
+
+Template.items.events({
+  'click .Item': function()
+  {
+    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxx");
+    Session.set("selected",this._id);
+  }  
+});
+//////////////////////////////////////////// END OF EDIT
   
 Template.details.DayString = function(){
   var D = new Date(Session.get("Date"));
   return "Items for " + Months[D.getMonth()] + ", " + D.getDate();
 }
-
 
 Template.details.events({
   'click .rsvp_yes': function () {
